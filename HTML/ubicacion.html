@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="RuthM, MarianaO, JosafatA, CamilaL">
+    <meta name="description" content="Proyecto de la materia de Desarrollo Web">
+    <meta name="date" content="2024-10-12">
+    <title>Inicio</title>
+
+    <link rel="stylesheet" href="../CSS/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="IMG/logoOficial2.jpg" alt="logo" class="logo">
+                </a>
+
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active px-3" aria-current="page" href="inicio.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#" onclick="mostrarModuloProductos()">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#" onclick="mostrarModuloAcercaDe()">Acerca de</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-3" href="#" onclick="mostrarModuloContacto()">Contacto</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex flex-column mt-2 d-lg-none">
+                        <div class="d-flex">
+                            <a href="https://facebook.com" target="_blank" class="nav-link">
+                                <img src="IMG/logoFB.png" alt="facebook" class="redes">
+                            </a>
+                            <a href="https://twitter.com" target="_blank" class="nav-link mx-2">
+                                <img src="IMG/logoInstagram.png" alt="instagram" class="redes">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="ubicacion">
+            <h1>Ubicación</h1>
+        </div>
+
+    <div class="container my-5">
+        <div class="row col-12">
+            <!-- Mapa y ubicación -->
+            <div class="col-md-5">
+                <div class="card">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d67029.45941310337!2d-101.74483497303333!3d21.10013720312126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x842bbf968f1596c5%3A0x3d53a56cf50b6925!2sR%C3%ADo%20Conchos%20401%2C%20San%20Miguel%2C%2037390%20Le%C3%B3n%20de%20los%20Aldama%2C%20Gto.!3m2!1d21.0996685!2d-101.6873533!5e0!3m2!1ses-419!2smx!4v1729056786687!5m2!1ses-419!2smx" width="100%" height="50%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            
+            <!-- Información de contacto -->
+            <div class="col-md-5">
+                <div class="card p-4">
+                    <p style="font-size: 2rem; text-align: center;"></p>><svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                    </svg>
+                    <i class="bi bi-telephone" style="font-size: 2rem; text-align: center;"></i> Teléfono: 47765937475</p>
+                    <p style="font-size: 2rem; text-align: center;"></p>><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-flag-fill" viewBox="0 0 16 16">
+                        <path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001"/>
+                    </svg>
+                    <i class="bi bi-geo-alt"></i> Ubicación: Río Conchos y Río Nazas, León, Guanajuato</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="../CSS/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="JS/inicio.js"></script>
+</body>
+
+</html>

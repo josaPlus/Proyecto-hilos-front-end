@@ -1,0 +1,199 @@
+body {
+    header {
+        .navbar {
+            background-color: #233d4d;
+            padding: 10px 0;
+        }
+        
+        .navbar .nav-link, .navbar .navbar-brand, .navbar .nav-link.active {
+            color: #fff;
+            font-size: 1.2em;
+        }
+        
+        .navbar .nav-link:hover, .navbar .navbar-brand:hover {
+            color: #fcca46;
+        }  
+
+        .navbar-toggler-icon {
+            background-image: url(../IMG/menuHamburguea.png);
+            width: 40px;
+            height: 40px;
+        }
+
+        .navbar-toggler, .navbar-toggler:focus{  
+            border: none;
+            box-shadow: none;
+        }
+    }
+    main {
+        .custom-container {
+            width: 70%;
+            margin: auto; /* Para centrar el contenedor horizontalmente */
+            color: #000;
+            background-color: #fff;
+        }
+
+        .text-justify {
+            text-align: justify;
+        }
+    }
+    
+    footer {
+        background-color: #233d4d;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .contact-text {
+        color: #ffffff !important;
+    }
+    
+    
+    footer a {
+        color: #ffffff ;
+    }
+
+    footer a:hover {
+        color: #fcca46 !important;
+    }
+}
+.slider {
+    transition: transform 0.5s ease;
+    display: flex;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%; /* Imágenes a ancho completo */
+    max-width: 300px; /* Ancho máximo de cada imagen */
+    margin: 0; /* Sin márgenes */
+    transition: transform 0.5s ease-in-out
+}
+
+.slider img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */;
+}
+
+.fondomain{
+    background-color: #619b8a;
+    font-size: 3rem;
+    color: #fff;
+    padding: 5rem;
+    text-align: center;
+
+    h1{
+        font-size: 4rem;
+        color: #000;
+        font-family: "Roboto Slab";
+    }
+    h3{
+        font-size: 2rem;
+        color:#000;
+        font-family: "Roboto Slab";
+    }
+}
+
+
+.ubicacion{
+    background-color:rgb(255, 187, 0);;
+    font-size: 2rem;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+
+    h1{
+        font-size: 4rem;
+        color: #000;
+        font-family: "Roboto Slab";
+    }
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #619b8a;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.borde {
+    border: 2px solid rgb(255, 187, 0);
+    border-radius: 7px;
+    padding: 18px;
+    margin-top: 10px;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    margin-left: 15px;
+}
+
+.redes {
+    width: 50px;
+    height: 50px;
+    border-radius: 0%;
+    margin-left: 10px;
+} 
+
+#img-card {
+    height: 200px;
+}
+
+.seccion-rosa {
+    background-color: #ed2083;
+    color: #fff;
+    height: 100%;
+}
+
+/* estilo para contacto */
+.contact-box {
+    background-color: #FFC107; 
+    padding: 20px;
+    border-radius: 10px;
+}
+.icon-box {
+    text-align: left;
+    margin-top: 20px;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    width: 3.5rem; 
+    height: 3.5rem;
+    background-color: #ea7500;
+    border-radius: 50%; 
+}
+
+
+.icon-box img.icon {
+    width: 2.5rem; 
+    height: 2.5rem; 
+}
+
+.icon-box p {
+    margin: 0;
+    color: #000;
+}
+
+.icon-box a {
+    color: #000; 
+}
+
+.icon-box a:hover {
+    color: #fcca46;
+}
