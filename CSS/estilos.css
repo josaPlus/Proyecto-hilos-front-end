@@ -197,3 +197,39 @@ li {
 .icon-box a:hover {
     color: #fcca46;
 }
+
+/* estilo carousel productos */
+.custom-carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3rem; 
+    height: 3rem; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-control-prev {
+    left: -4rem; 
+}
+
+.carousel-control-next {
+    right: -4rem; 
+}
+
+.carousel-item img {
+    width: 204px; 
+    height: 255px; 
+    object-fit: cover; 
+    margin: 0 auto;
+}
+
+.custom-img {
+    width: 15px; 
+    height: 200px; 
+    object-fit: cover; 
+    margin: 0 auto; 
+}
