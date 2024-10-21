@@ -39,7 +39,7 @@ body {
     }
     
     footer {
-        background-color: #233d4d;
+        background-color: #607947;
         color: #fff;
         padding: 10px 0;
         text-align: center;
@@ -156,7 +156,7 @@ li {
 
 /* estilo para contacto */
 .contact-box {
-    background-color: #FFC107; 
+    background-color: #d5bdaf; 
     padding: 20px;
     border-radius: 10px;
 }
