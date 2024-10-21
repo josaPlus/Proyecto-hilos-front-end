@@ -28,7 +28,7 @@ body {
     main {
         .custom-container {
             width: 70%;
-            margin: auto; /* Para centrar el contenedor horizontalmente */
+            margin: auto;
             color: #000;
             background-color: #fff;
         }
@@ -41,21 +41,60 @@ body {
     footer {
         background-color: #607947;
         color: #fff;
-        padding: 10px 0;
+        padding: 40px 0;
         text-align: center;
+    }
+    
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #fff;
+    }
+    
+    
+    
+    
+    .titulo-footer {
+        padding-bottom: 25px;
+    }
+    
+    .dot {
+        height: 50px;
+        width: 50px;
+        background-color: #262626;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    
+    .texto-footer {
+        color: #2b2a2a;
+    }
+    
+    .footer-contact i {
+        font-size: 1.2rem;
+        margin-right: 10px;
+    }
+    
+    .footer-contact p {
+        margin: 0;
+    }
+    
+    .footer-contact a {
+        color: #fff;
+        text-decoration: none;
     }
 
     .contact-text {
         color: #ffffff !important;
     }
-    
-    
-    footer a {
-        color: #ffffff ;
-    }
 
-    footer a:hover {
-        color: #fcca46 !important;
+    .footer-contact a:hover {
+        color: #fcca46;
+    }
+    .footer-text {
+        color: #fff;
     }
 }
 .slider {
@@ -65,14 +104,14 @@ body {
 }
 
 .slider img {
-    width: 100%; /* Imágenes a ancho completo */
-    max-width: 300px; /* Ancho máximo de cada imagen */
-    margin: 0; /* Sin márgenes */
+    width: 100%; 
+    max-width: 300px; 
+    margin: 0; 
     transition: transform 0.5s ease-in-out
 }
 
 .slider img:hover {
-    transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */;
+    transform: scale(1.2);
 }
 
 .fondomain{
@@ -166,7 +205,6 @@ li {
     width: 100%; 
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .icon-container {
@@ -198,7 +236,7 @@ li {
     color: #fcca46;
 }
 
-/* estilo carousel productos */
+
 .custom-carousel-control {
     position: absolute;
     top: 50%;
@@ -232,4 +270,28 @@ li {
     height: 200px; 
     object-fit: cover; 
     margin: 0 auto; 
+}
+
+.inter-font{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.literata-font{
+        font-family: "Literata", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+}
+
+.inika-font{
+    font-family: "Inika", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.align-items-left{
+    align-items: left;
 }

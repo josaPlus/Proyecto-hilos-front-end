@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:ital,opsz,wght@1,14..32,300&family=Literata:ital,opsz@0,7..72;1,7..72&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -33,16 +33,16 @@
 
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item">
+                        <li class="nav-item inter-font">
                             <a class="nav-link active px-3" aria-current="page" href="inicio.html">Inicio</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item inter-font">
                             <a class="nav-link px-3" href="#" onclick="mostrarModuloProductos()">Productos</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item inter-font">
                             <a class="nav-link px-3" href="#" onclick="mostrarModuloAcercaDe()">Acerca de</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item inter-font">
                             <a class="nav-link px-3" href="#" onclick="mostrarModuloContacto()">Contacto</a>
                         </li>
                     </ul>
@@ -82,7 +82,7 @@
 
         <div class="fondomain">
             <h1>HILOS SAN RAFAEL</h1>
-            <h3>¡Tu mejor opción!</h3>
+            <h3 class="inter-font">¡Tu mejor opción!</h3>
         </div>
 
 
@@ -96,7 +96,7 @@
                             </svg>  
                         </p>
                         <div class="card-body">
-                            <h5 class="card-title text-center">Envíos gratis</h5>
+                            <h5 class="card-title text-center" >Envíos gratis</h5>
                         </div>
                     </div>
                 </div>
@@ -139,32 +139,54 @@
                 </div>
         </div>
     </main>
-    <footer class="footer mt-auto">
+    <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 d-flex align-items-center">
-                    <!-- Icono -->
-                    <img src="./IMG/logoFooter.png" width="200" height="200" alt="abeja" class="img-fluid">
+                <div class="col-md-3">
+                    <div>
+                        <figure>
+                            <img class="w-75" src="IMG/logoFooter.png" alt="Logo Hilos San Rafael">
+                        </figure>
+                    </div>
+                </div>    
+                <div class="col-md-3">
+                        <div class="row mx-2 pb-4">
+                            <div>
+                                <p><strong>Teléfono</strong></p>
+                                <p><a class="texto-footer" href="tel:477 636 0799">477 636 0799</a></p>
+                                
+                            </div>
+                        </div>
+
+                        <div class="row mx-2 pb-4">
+                            <div class="">
+                                <p> <strong>Dirección</strong></p>
+                                <p class="texto-footer"> Río Conchos 401, San Miguel, 37390 León de los Aldama, Gto.
+                            </div>
+                        </div>
                 </div>
                 <div class="col-md-3">
-                    <ul class="list-unstyled">
-                        <li><a href="#">Productos</a></li>
-                        <li><a href="#">Acerca de</a></li>
-                        <li><a href="#" onclick="mostrarModuloContacto()">Contacto</a></li>
-                    </ul>
+                    <h5 class="titulo-footer">HORARIO</h5>
+                    <p class="texto-footer">Lunes - Viernes: 9:00 am - 6:00 pm</p>
+                    <p class="texto-footer">Sábado: Cerrado</p>
+                    <p class="texto-footer">Domingo: Cerrado</p>
                 </div>
                 <div class="col-md-3">
-                    <p class="contact-text"><strong>Contáctanos</strong></p>
-                    <p class="contact-text">477 810 1234</p>
-                </div>
-                <div class="col-md-3">
-                    <ul class="list-unstyled">
-                        <li><a href="#">Políticas de privacidad</a></li>
-                        <li><a href="#">Restricciones</a></li>
-                    </ul>
+                    <h5 class="titulo-footer">PÁGINAS</h5>
+                    <div class="row mx-2 pb-4">
+                        <div > 
+                            <p><a class="texto-footer" onclick="mostrarModuloAcercaDe()">Acerca de</a></p>
+                            <p><a class="texto-footer" onclick="mostrarModuloContacto()">Contacto</a></p>
+                            <p><a class="texto-footer">Políticas de privacidad</a></p>
+                            <p><a class="texto-footer" >Restricciones</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <hr style="color:#000000">
+            <div class="footer-bottom">
+                <p class="texto-footer"> © Todos los Derechos Reservados</p>
+            </div>
         </div>
     </footer>
 
