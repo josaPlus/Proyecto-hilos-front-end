@@ -72,4 +72,52 @@ function mostrarModuloPreguntas() {
       .then(function (modulo) {
           contenedorPrincipal.innerHTML = modulo;
       });
-  }
+}
+
+function mostrarModuloPoliticas() {
+    let contenedorPrincipal = document.getElementById("panelPrincipal");
+  
+    fetch("HTML/politicas.html")
+      .then(function (data) {
+          return data.text();
+      })
+      .then(function (modulo) {
+          contenedorPrincipal.innerHTML = modulo;
+      });
+}
+
+function mostrarModuloRestricciones() {
+    let contenedorPrincipal = document.getElementById("panelPrincipal");
+  
+    fetch("HTML/restricciones.html")
+      .then(function (data) {
+          return data.text();
+      })
+      .then(function (modulo) {
+          contenedorPrincipal.innerHTML = modulo;
+      });
+}
+
+function mostrarCarroCompras() {
+    let contenedorPrincipal = document.getElementById("panelProductos");
+  
+    fetch("HTML/carroCompras.html")
+      .then(function (data) {
+          return data.text();
+      })
+      .then(function (modulo) {
+          contenedorPrincipal.innerHTML = modulo;
+      });
+}
+
+function mostrarModuloLogin() {
+    let contenedorPrincipal = document.getElementById("panelPrincipal");
+  
+    fetch("HTML/login.html")
+      .then(function (data) {
+          return data.text();
+      })
+      .then(function (modulo) {
+          contenedorPrincipal.innerHTML = modulo;
+      });
+}
