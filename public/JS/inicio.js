@@ -121,3 +121,15 @@ function mostrarModuloLogin() {
           contenedorPrincipal.innerHTML = modulo;
       });
 }
+
+function mostrarModuloInformacionProducto() {
+    let contenedorPrincipal = document.getElementById("panelPrincipal");
+  
+    fetch("HTML/informacionProducto.html")
+      .then(function (data) {
+          return data.text();
+      })
+      .then(function (modulo) {
+          contenedorPrincipal.innerHTML = modulo;
+      });
+}
