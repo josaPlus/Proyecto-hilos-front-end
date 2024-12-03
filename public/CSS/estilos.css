@@ -579,3 +579,36 @@ form button:hover {
     transform: scale(1.05);
   }
 }
+
+
+/* estilos productos */
+
+#panelProductos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre las tarjetas */
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+}
+
+#panelProductos {
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+}
