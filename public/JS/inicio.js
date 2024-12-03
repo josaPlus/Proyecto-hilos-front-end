@@ -1,6 +1,7 @@
 
 let usuarioIngresado= false;
 let usuarioEnTurno= "";
+let productos=[];
 //Acerca de
 function mostrarModuloAcercaDe() {
     let contenedorPrincipal = document.getElementById('panelPrincipal');
@@ -29,21 +30,7 @@ function mostrarModuloNuestrosClientes() {
 //  Productos
 function mostrarModuloProductos() {
     let contenedorPrincipal = document.getElementById('panelPrincipal');
-    let productos=[];
-    fetch('/productos/obtenerProductos')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            productos = data;
-            console.log('Productos obtenidos:', productos);
-        })
-        .catch(error => {
-            console.error('Error al obtener productos:', error);
-        });
+
 
     fetch('HTML/productos.html')
         .then(function (data) {
@@ -51,6 +38,7 @@ function mostrarModuloProductos() {
         })
         .then(function(modulo) {
             contenedorPrincipal.innerHTML = modulo;
+            cargarProductos();
         });
 }
 
@@ -140,13 +128,13 @@ function mostrarModuloLogin() {
           inicializarFormularioLogin()
           inicializarFormularioRegistrarse()
       });
-
-
-
 }
 
-function mostrarModuloInformacionProducto() {
+function mostrarModuloInformacionProducto(id) {
     let contenedorPrincipal = document.getElementById("panelPrincipal");
+    let producto= obtenerInfoProducto(id)
+    console.log(producto.nombre);
+
 
     fetch("HTML/informacionProducto.html")
       .then(function (data) {
@@ -262,4 +250,53 @@ function limpiarFormularioLogin(){
   usuarioLI.value="";
   contrasenaLI.value=""
 
+}
+
+function cargarProductos(){
+
+    fetch('/productos/obtenerProductos')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            productos = data;
+            console.log('Productos obtenidos:', productos);
+            mostrarProductos();
+        })
+        .catch(error => {
+            console.error('Error al obtener productos:', error);
+        });
+
+}
+
+function mostrarProductos(){
+  let areaAgregarProductos= document.getElementById("panelProductos")
+  productos.forEach(producto => {
+        console.log("hola")
+        console.log(producto)
+          areaAgregarProductos.innerHTML+=`
+          <div class="card">
+            <h2 class="card-title"> ${producto.nombre}</h2>
+            <img src="${producto.imagen}" alt="Imagen del Producto" class="card-image" >
+            <button onclick="mostrarModuloInformacionProducto('${producto._id}')">Agregar al carrito</button>
+          </div>
+          `
+      });
+}
+
+async function obtenerInfoProducto(id) {
+  console.log("entro");
+  try {
+      const response = await fetch(`/productos/obtenerProducto?id=${id}`);
+      if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      return data;
+  } catch (error) {
+      console.error('Error al obtener productos:', error);
+  }
 }
