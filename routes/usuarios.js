@@ -2,13 +2,19 @@ const express = require("express");
 const router= express.Router();
 const Usuario= require('../models/Usuario');
 
-router.get("/verificarLogin", async (req,res)=>{
+router.post("/verificarLogin", async (req,res)=>{
   const usuarioIngresado= req.body.usuario;
   const contrasenaIngresada= req.body.contrasena;
   const usuarios= await Usuario.find();
+  console.log(usuarioIngresado);
+  console.log(contrasenaIngresada)
   for(let i=0; i<usuarios.length; i++){
-    if(usuarios[i].usuario== usuarioIngresado && usuarios[i].contrasena == contrasenaIngresada){
-      res.send(true);
+    console.log(usuarios[i])
+    if(usuarios[i].email== usuarioIngresado && usuarios[i].contrasena == contrasenaIngresada){
+      res.json({
+        ingreso: true,
+        usuario: usuarios[i]._id
+      });
       return;
     }
   }

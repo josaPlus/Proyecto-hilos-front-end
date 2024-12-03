@@ -3,12 +3,11 @@
     <div class="col">
       <div class="p-3 half-screen-rectangle">
         <div class="formulario">
-          <form class="login-form">
+          <form class="login-form" id="loginForm">
             <h2 style="text-align: center;">Ingresar</h2>
-            <input type="email" placeholder="Correo">
-            <input type="password" placeholder="Contraseña">
-            <button type="button" class="btn btn-primary formulario"
-              style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+            <input type="email" id="correoLI" placeholder="Correo">
+            <input type="password" id="contrasenaLI" placeholder="Contraseña">
+            <button type="submit" class="btn btn-primary formulario" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
               Ingresar
             </button>
           </form>
@@ -19,15 +18,14 @@
       <div class="p-3">
         <div class="p-3 half-screen-rectangle2">
           <div class="formulario">
-            <form class="login-form">
+            <form class="login-form" id="registrarForm">
               <h2 style="text-align: center;">Registrarse</h2>
-              <input type="text" placeholder="Nombre">
-              <input type="text" placeholder="Apellido">
-              <input type="date" placeholder="Fecha de nacimiento">
-              <input type="email" placeholder="Email">
-              <input type="password" placeholder="Contraseña">
-              <input type="password" placeholder="Contraseña">
-              <button type="button" class="btn btn-primary formulario"
+              <input type="text" id="nombreR" placeholder="Nombre">
+              <input type="text" id="apellidoR" placeholder="Apellido">
+              <input type="email" id="emailR" placeholder="Email">
+              <input type="password" id="contrasenaR1" placeholder="Contraseña">
+              <input type="password" id="contrasenaR2" placeholder="Contraseña">
+              <button type="submit" class="btn btn-primary formulario"
                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                 Registrarse
               </button>
