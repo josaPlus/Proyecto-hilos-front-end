@@ -612,3 +612,17 @@ form button:hover {
     border-radius: 10px;
 }
 }
+
+/*modal productos*/
+.modal-content {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  animation: changeColor 10s infinite;
+}
+
+@keyframes changeColor {
+  0% { background-color: #ff7e5f; }
+  25% { background-color: #feb47b; }
+  50% { background-color: #ff7e5f; }
+  75% { background-color: #feb47b; }
+  100% { background-color: #ff7e5f; }
+}
