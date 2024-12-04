@@ -77,14 +77,43 @@
         </nav>
     </header>
 
-    <main id="panelPrincipal">
-        <div class="slider">
+   <div class="d-none d-md-block"> 
+            <div class="slider">
             <img src="IMG/h2-hilos-sanrafael.webp" alt="Hilos San Rafael 2">
             <img src="IMG/h5-hilos-sanrafael.webp" alt="Hilos San Rafael 5">
             <img src="IMG/h1_hilos-sanrafael.webp" alt="Hilos San Rafael 1">
             <img src="IMG/h6-hilos-sanrafael.webp" alt="Hilos San Rafael 6">
             <img src="IMG/h7-hilos-sanrafael.webp" alt="Hilos San Rafael 7">
+            </div>
         </div>
+
+        <div class="d-md-none">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="IMG/h2-hilos-sanrafael.webp" class="d-block w-100" alt="Hilos san rafael 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="IMG/h5-hilos-sanrafael.webp" class="d-block w-100" alt="Hilos san rafael 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="IMG/h6-hilos-sanrafael.webp" class="d-block w-100" alt="Hilos san rafael 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="IMG/h7-hilos-sanrafael.webp" class="d-block w-100" alt="Hilos san rafael 7">
+                    </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+        </div>
+
 
         <div class="fondomain">
             <h1>HILOS SAN RAFAEL</h1>
