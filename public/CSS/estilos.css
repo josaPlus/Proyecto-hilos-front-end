@@ -39,12 +39,12 @@ body {
         .text-justify {
             text-align: justify;
         }
-      
+
         p{
           font-family: 'Barlow', sans-serif;
 
         }
-    }  
+    }
 
     footer {
         background-color: #607947;
@@ -206,8 +206,11 @@ li {
   background-color: #fcca46;
   padding: 35px;
   border-radius: 10px;
-  width:80%;
+  width: 90%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
+
 .icon-box {
     text-align: left;
     margin-top: 20px;
@@ -750,11 +753,50 @@ li {
       display: flex; /* Activamos Flexbox */
       align-items: center; /* Centrado vertical */
       justify-content: center; /* Opcional: centrar horizontalmente */
-       height: 300px; /* Ocupa toda la altura de la ventana */
+      height: 300px; /* Ocupa toda la altura de la ventana */
       width: 100%; /* Asegura que ocupe todo el ancho */
       margin-top: 20vh;
       margin-bottom: 20vh;
-    }
+
+  }
+
+  .inputs-contacto {
+    background-color: transparent;;
+    border: none; /* Eliminar los bordes predeterminados */
+    border-bottom: 2px solid black; /* Agregar línea negra debajo */
+    border-radius: 0; /* Eliminar bordes redondeados */
+    outline: none; /* Quitar el resaltado azul al hacer clic */
+    width: 100%; /* Asegurar que ocupe el ancho completo */
+    padding: 5px 0; /* Espaciado interno */
+    font-size: 1.2rem; /* Tamaño de fuente */
+}
+
+.inputs-contacto:focus {
+  background-color: transparent; /* Fondo transparente al enfocar */
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-bottom: 2px solid #fd7e14; /* Mantener línea negra al enfocar */
+}
+
+.btn-enviar-contacto{
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  border:none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  display: block;
+  display: flex;
+  color: rgb(0, 0, 0);
+}
+
+.background-contacto{
+  background-color: #fcca46;
+      padding: 35px;
+      border-radius: 10px;
+      width: 80%;;
+  }
+
 
     .inputs {
       background-color: transparent;;

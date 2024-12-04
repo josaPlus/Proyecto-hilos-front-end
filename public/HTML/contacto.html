@@ -1,51 +1,105 @@
-<div class="blue-background">
-  <div class="container my-5 d-flex justify-content-center">
-      <div class="row w-100 g-3">
-          <div class="col-md-6 d-flex flex-column justify-content-center align-items-left" style="padding-left: 10vw;">
-              <div class="icon-box d-flex" style="align-items: left !important;">
-                  <div class="icon-container">
-                      <img src="../IMG/telephone-fill.svg" alt="telefono" class="icon">
+<div class="d-none d-md-block">
+  <div class="blue-background">
+      <div class="container my-5 d-flex">
+          <div class="row w-100 g-3">
+              <div class="col-md-6 d-flex flex-column justify-content-center align-items-left" style="padding-left: 10vw;">
+                  <div class="icon-box d-flex" style="align-items: left !important;">
+                      <div class="icon-container">
+                          <img src="../IMG/telephone-fill.svg" alt="telefono" class="icon">
+                      </div>
+                      <p class="ms-2" style="font-size: 1.2rem;">4776593745</p>
                   </div>
-                  <p class="ms-2" style="font-size: 1.2rem;">4776593745</p>
-              </div>
-              <div class="icon-box d-flex align-items-left">
-                  <div class="icon-container">
-                      <img src="../IMG/geo-alt-fill.svg" alt="Ubicación" class="icon">
+                  <div class="icon-box d-flex align-items-left">
+                      <div class="icon-container">
+                          <img src="../IMG/geo-alt-fill.svg" alt="Ubicación" class="icon">
+                      </div>
+                      <p class="ms-2" style="font-size: 1.2rem;">Ubicación</p>
                   </div>
-                  <p class="ms-2" style="font-size: 1.2rem;"> <a href="#" onclick="mostrarModuloUbicación();">Ubicación </a></p>
-              </div>
-              <div class="icon-box d-flex align-items-left">
-                  <div class="icon-container">
-                      <img src="../IMG/patch-question-fill.svg" alt="signo de pregunta" class="icon">
+                  <div class="icon-box d-flex align-items-left">
+                      <div class="icon-container">
+                          <img src="../IMG/patch-question-fill.svg" alt="signo de pregunta" class="icon">
+                      </div>
+                      <p class="ms-2" style="font-size: 1.2rem;"><a href="#" onclick="mostrarModuloPreguntas()">Preguntas frecuentes</a></p>
                   </div>
-                  <p class="ms-2" style="font-size: 1.2rem;"><a href="#" onclick="mostrarModuloPreguntas()">Preguntas frecuentes</a></p>
               </div>
-          </div>
-          <div class="col-md-6 justify-content-center">
-              <div class="contact-box">
-                  <h2 class="mb-3">Contáctanos</h2>
-                  <form>
-                      <div class="mb-3">
-                          <input type="text" class="form-control inputs" id="name" placeholder="Nombre">
+              <div class="col-md-6">
+                  <div class="contact-box">
+                      <h2 class="mb-3">Contáctanos</h2>
+                      <form>
+                          <div class="mb-3">
+                              <input type="text" class="form-control inputs-contacto" id="name" placeholder="Nombre">
+                          </div>
+                          <div class="mb-3">
+                              <input type="email" class="form-control inputs-contacto" id="email" placeholder="Correo electrónico">
+                          </div>
+                          <div class="mb-3">
+                              <input type="tel" class="form-control inputs-contacto" id="phone" placeholder="Teléfono">
+                          </div>
+                          <div class="mb-3">
+                              <label for="message" class="form-label">Solicito cotización:</label>
+                              <textarea class="form-control inputs-contacto" id="message" rows="2"></textarea>
+                          </div>
+                      </form>
+                      <div class="d-flex align-items-start justify-content-start">
+                          <button class="btn-enviar-contacto mt-3" style="background-color: #fff !important;">
+                              <h5>Enviar</h5>
+                          </button>
                       </div>
-                      <div class="mb-3">
-                          <input type="email" class="form-control inputs" id="email" placeholder="Correo electrónico">
-                      </div>
-                      <div class="mb-3">
-                          <input type="tel" class="form-control inputs" id="phone" placeholder="Teléfono">
-                      </div>
-                      <div class="mb-3">
-                          <label for="message" class="form-label">Solicito cotización:</label>
-                          <textarea class="form-control inputs" id="message" rows="2"></textarea>
-                      </div>
-                  </form>
-                  <div class="d-flex align-items-start justify-content-start">
-                      <button class="btnPagar mt-3" style="background-color: #fff !important;">
-                          <h5>Enviar</h5>
-                      </button>
                   </div>
               </div>
           </div>
       </div>
   </div>
-</div>
+  </div>
+
+  <div class="d-md-none">
+      <div class="container my-5 d-flex">
+          <div class="row w-100 g-3">
+              <div class="col-md-6">
+                  <div class="contact-box">
+                      <h2 class="mb-3">Contáctanos</h2>
+                      <form>
+                          <div class="mb-3">
+                              <input type="text" class="form-control inputs-contacto" id="name" placeholder="Nombre">
+                          </div>
+                          <div class="mb-3">
+                              <input type="email" class="form-control inputs-contacto" id="email" placeholder="Correo electrónico">
+                          </div>
+                          <div class="mb-3">
+                              <input type="tel" class="form-control inputs-contacto" id="phone" placeholder="Teléfono">
+                          </div>
+                          <div class="mb-3">
+                              <label for="message" class="form-label">Solicito cotización:</label>
+                              <textarea class="form-control inputs-contacto" id="message" rows="2"></textarea>
+                          </div>
+                      </form>
+                      <div class="d-flex align-items-start justify-content-start">
+                          <button class="btn-enviar-contacto mt-3" style="background-color: #fff !important;">
+                              <h5>Enviar</h5>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 d-flex flex-column justify-content-center align-items-left" style="padding-left: 10vw;">
+                  <div class="icon-box d-flex" style="align-items: left !important;">
+                      <div class="icon-container">
+                          <img src="telephone-fill.svg" alt="telefono" class="icon">
+                      </div>
+                      <p class="ms-2" style="font-size: 1.2rem;">4776593745</p>
+                  </div>
+                  <div class="icon-box d-flex align-items-left">
+                      <div class="icon-container">
+                          <img src="geo-alt-fill.svg" alt="Ubicación" class="icon">
+                      </div>
+                      <p class="ms-2" style="font-size: 1.2rem;">Ubicación</p>
+                  </div>
+                  <div class="icon-box d-flex align-items-left">
+                      <div class="icon-container">
+                          <img src="patch-question-fill.svg" alt="signo de pregunta" class="icon">
+                      </div>
+                      <p class="ms-2" style="font-size: 1.2rem;"><a href="#" onclick="mostrarModuloPreguntas()">Preguntas frecuentes</a></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
