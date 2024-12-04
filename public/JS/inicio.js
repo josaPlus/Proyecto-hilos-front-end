@@ -157,6 +157,18 @@ function mostrarModuloInformacionProducto() {
       });
 }
 
+function mostrarModuloRegistro() {
+    let contenedorPrincipal = document.getElementById("panelPrincipal");
+
+    fetch("HTML/registrarse.html")
+      .then(function (data) {
+          return data.text();
+      })
+      .then(function (modulo) {
+          contenedorPrincipal.innerHTML = modulo;
+      });
+}
+
 function inicializarFormularioLogin(){
   let loginForm= document.getElementById("loginForm");
 
