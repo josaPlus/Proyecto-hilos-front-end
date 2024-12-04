@@ -399,110 +399,94 @@ li {
 
 
   /* estilos login html */
-  CSS
-       .container-hilos {
-  background-image: url('fondo-login-hilos.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-}
+  .background {
+            background-image: url('FONDO.webp'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh; 
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center; 
+        }
 
-.half-screen-rectangle,
-.half-screen-rectangle2 {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.half-screen-rectangle2 {
-  right: 0;
-}
+        .formulario {
+            background-color: #fff; 
+            padding: 30px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            opacity: 0.9;
+        }
 
-/* Formulario */
-.formulario {
-  background-color: #fff;
-  padding: 20px;
-  margin: 10px;
-  width: 90%; /* Cambia para pantallas pequeñas */
-  max-width: 400px; /* Tamaño máximo */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-}
 
-.formulario h2 {
-  margin-bottom: 15px;
-  font-size: 20px;
-  text-align: center;
-  color: #000;
-}
+        .formulario h2 {
+            font-size: 2rem;
+            color: #6d6a6a; 
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-form input, form textarea {
-  margin-bottom: 15px;
-  padding: 10px 5px;
-  font-size: 14px;
-  border: none;
-  border-bottom: 2px solid #ccc;
-  outline: none;
-  width: 100%;
-  background-color: transparent;
-}
+        form input {
+            margin-bottom: 15px;
+            padding: 10px 5px;
+            font-size: 14px;
+            border: none;
+            border-bottom: 2px solid #4d4b4b;
+            outline: none;
+            width: 100%;
+            background-color: transparent;
+        }
 
-form input:focus, form textarea:focus {
-  border-bottom: 2px solid #007bff;
-}
+        /* Estilo cuando el campo tiene foco */
+        form input:focus {
+            border-bottom: 2px solid #fe7f2d
+            ;
+        }
 
-form textarea {
-  resize: none;
-}
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #fe7f2d
+            ;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-form button {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
-form button:hover {
-  background-color: #0056b3;
-}
+        form button:hover {
+            background-color: #f7bd96
+            ;
+        }
 
-/* Estilos responsivos */
-@media screen and (max-width: 768px) {
-  .container-hilos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+ 
+        .formulario a {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+            color: #4d4b4b;
+            text-decoration: none;
+        }
 
-  .half-screen-rectangle,
-  .half-screen-rectangle2 {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
-}
+        .formulario a:hover {
+            color: #f7bd96
 
-@media screen and (max-width: 480px) {
-  .formulario {
-    padding: 15px;
-    width: 100%; /* Usa todo el ancho */
-  }
+            ;
+        }
 
-  form button {
-    font-size: 12px;
-  }
-}
-
+        @media screen and (max-width: 768px) {
+            .formulario {
+                padding: 15px;
+                width: 100%;
+            }
+            form button {
+                font-size: 12px;
+            }
+        }
 /* estilo informacionProductos */
 * {
   margin: 0;
