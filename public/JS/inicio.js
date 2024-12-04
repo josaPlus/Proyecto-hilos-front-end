@@ -184,9 +184,6 @@ function mostrarCarroCompras() {
 function mostrarModuloLogin() {
     let contenedorPrincipal = document.getElementById("panelPrincipal");
 
-       let mensaje= "Bienvenido a login"
-    Swal.fire(mensaje)
-
 
     fetch("HTML/login.html")
       .then(function (data) {

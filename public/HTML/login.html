@@ -1,16 +1,109 @@
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.background {
+  background-image: url('./IMG/FONDO.webp');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.formulario {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+}
+
+
+.formulario h2 {
+  font-size: 2rem;
+  color: #6d6a6a;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form input {
+  margin-bottom: 15px;
+  padding: 10px 5px;
+  font-size: 14px;
+  border: none;
+  border-bottom: 2px solid #4d4b4b;
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+}
+
+/* Estilo cuando el campo tiene foco */
+form input:focus {
+  border-bottom: 2px solid #fe7f2d
+  ;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #fe7f2d
+  ;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+form button:hover {
+  background-color: #f7bd96
+  ;
+}
+
+.formulario a {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+  color: #4d4b4b;
+  text-decoration: none;
+}
+
+.formulario a:hover {
+  color: #f7bd96
+
+  ;
+}
+
+@media screen and (max-width: 768px) {
+  .formulario {
+      padding: 15px;
+      width: 100%;
+  }
+  form button {
+      font-size: 12px;
+     }
+        }
+</style>
 <div class="background">
   <div class="container">
-      <div class="row justify-content-start">
-                <div class="formulario">
-                  <form class="login-form" id="loginForm">
+      <div class="row justify-content-center">
+        <div class="formulario">
+                  <form class="login-form formulario" id="loginForm">
                       <h2 style="text-align: center;">Ingresar</h2>
                       <input type="email" id="correoLI" placeholder="Correo">
                       <input type="password" id="contrasenaLI" placeholder="Contraseña">
                       <button type="submit">Iniciar sesión</button>
                   </form>
                   <a class="text-secundary" onclick="mostrarModuloRegistro();">Registrate</a>
-              </div>
-
+        </div>
       </div>
   </div>
 </div>
