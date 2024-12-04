@@ -7,7 +7,7 @@ router.get("/mostrarPedidos", (req,res)=>{
 
 })
 
-router.post("/registarPedido", (req,res)=>{
+router.post("/registrarPedido", (req,res)=>{
   let pedido= req.body;
   pedido= new Pedido(pedido);
   pedido.save().then(data=> res.send(data)).catch(err=> res.send(err))

@@ -615,6 +615,50 @@ async function inicializarCarroCompras() {
   let productoCC;
   let promises = [];
 
+  document.getElementById("botonPagar").addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    // Recopila la información del formulario
+    let telefono = document.getElementById("numTelefono").value;
+    let direccion = document.getElementById("direccionEnvio").value;
+
+    // Crea un objeto con la información del formulario
+    let pago = {
+        carritoCompras: carritoCompra,
+        direccion: direccion,
+        telefono: telefono,
+        usuario: usuarioEnTurno
+    };
+
+    try {
+        // Envía la información mediante una petición fetch con el método POST
+        let response = await fetch("/pedidos/registrarPedido", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(pago)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        let data = await response.json();
+        console.log("Pedido registrado:", data);
+
+        // Muestra una alerta de éxito
+        Swal.fire("Pedido registrado exitosamente!");
+        mostrarModuloProductos();
+
+    } catch (error) {
+        console.error("Error al registrar pedido:", error);
+        Swal.fire("Error al registrar pedido. Inténtalo de nuevo.");
+    }
+});
+
+
+
   for (let elemento of carritoCompra) {
       promises.push(
           (async () => {

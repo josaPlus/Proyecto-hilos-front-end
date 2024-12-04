@@ -1,28 +1,21 @@
 const mongoose= require('mongoose');
 const ElementoPedido= require('./ElementoPedido');
+const Usuario=require('./Usuario')
 const PedidoSchema= new mongoose.Schema({
-    elementos:{
+    carritoCompras:{
         type: Array,
         require: true
     },
-    cantidad: {
-        type: Number,
+    direccion: {
+        type: String,
         require: true
     },
-    montoTotal:{
-      type: mongoose.Types.Decimal128,
-      require: true
-    },
-    fechaRealizacion:{
-      type: Date,
-      require: true
-    },
-    fechaEntrega:{
-      type: Date
-    },
-    estado: {
+    telefono:{
       type: String,
       require: true
+    },
+    usuario:{
+      type: mongoose.Schema.Types.ObjectId, ref: 'Usuario',
     }
 });
 
