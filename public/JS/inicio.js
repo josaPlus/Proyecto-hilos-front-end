@@ -132,6 +132,10 @@ function mostrarCarroCompras() {
 function mostrarModuloLogin() {
     let contenedorPrincipal = document.getElementById("panelPrincipal");
 
+       let mensaje= "Bienvenido a login"
+    Swal.fire(mensaje)
+
+
     fetch("HTML/login.html")
       .then(function (data) {
           return data.text();
@@ -202,8 +206,18 @@ function inicializarFormularioLogin(){
             console.log("Usuario y contraseña correctos")
             mostrarModuloProductos();
             usuarioEnTurno= data.usuario;
+            Swal.fire({
+              icon: 'success',
+              title: 'Bienvenido!',
+              text: 'Ingreso exitoso!',
+            })
           }else{
             console.log("usuario y/o contraseña incorrectos")
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Usuario y/o contraseña incorrectos!',
+            });
             mostrarModuloLogin()
           }
         })
@@ -231,9 +245,18 @@ function inicializarFormularioRegistrarse(){
         email: emailR.value,
         contrasena: contrasenaR1.value
       });
+      Swal.fire({
+        icon: 'success',
+        title: 'Usuario registrado',
+        text: 'Bienvenido a Hilos San Rafael!'
+      })
     }else{
       console.log("las contraseñas no coinciden");
-
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Las contraseñas no coinciden!',
+      })
     }
 
     fetch(`/usuarios/registrarUsuario`, {
