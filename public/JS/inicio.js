@@ -116,6 +116,7 @@ function mostrarCarroCompras() {
       })
       .then(function (modulo) {
           contenedorPrincipal.innerHTML = modulo;
+          inicializarCarroCompras();
       });
 }
 
@@ -525,6 +526,47 @@ async function agregarAlCarrito(id){
 
   console.log(pedido)
 
+}
+
+async function inicializarCarroCompras(){
+  const elementosCarritoC= document.getElementById("elementosCarritoC")
+  const subtotal= document.getElementById("subtotal")
+  let montoFinal=0;
+    carritoCompra.forEach(elemento=>{
+      fetch(`/elementoPedidos/obtenerElemento?id=${encodeURIComponent(elemento.id)}`)
+        .then(response => {
+          console.log("Response: "+response)
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            elemento = data;
+            console.log(elemento);
+        })
+        .catch(error => {
+            console.error('Error al obtener elementoPedido:', error);
+        });
+      elementosCarritoC.innerHTML+= `
+      <div class="row w-100 m-0" style="font-size: 14px;">
+                    <div class="col-4 text-left">
+                        <p>${elemento.producto.nombre}</p>
+                    </div>
+                    <div class="col-2 text-center" style="background-color: ${elemento.color}">
+
+                    </div>
+                    <div class="col-3 text-center">
+                        <p>${elemento.cantidad}</p>
+                    </div>
+                    <div class="col-3 text-center">
+                        <p>$ ${elemento.montoTotal}</p>
+                    </div>
+                </div>
+      `
+      montoFinal+=elemento.montoTotal;
+    })
+    subtotal.innerText(montoFinal)
 }
 
 
