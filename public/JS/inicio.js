@@ -1,4 +1,4 @@
-import Swal from "sweetalert2";
+
 
 let usuarioIngresado= false;
 let usuarioEnTurno= "";
@@ -190,12 +190,7 @@ function inicializarFormularioLogin(){
           mostrarModuloProductos();
           usuarioEnTurno= data.usuario;
           console.log(usuarioEnTurno)
-          Swal.fire({
-            title: 'Inicio de sesión exitoso',
-            text: 'Has iniciado sesión correctamente',
-            icon: 'success',
-            confirmButtonText: 'Aceptar'
-          });
+
         })
         .catch(err => console.error('Fetch error:', err));
         limpiarFormularioLogin()
@@ -223,12 +218,7 @@ function inicializarFormularioRegistrarse(){
       });
     }else{
       console.log("las contraseñas no coinciden");
-      Swal.fire({
-        title: 'Error',
-        text: 'Las contraseñas no coinciden',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
+
     }
 
     fetch(`/usuarios/registrarUsuario`, {
@@ -248,12 +238,7 @@ function inicializarFormularioRegistrarse(){
       console.log(data);
       usuarioIngresado=true;
       mostrarModuloProductos();
-      Swal.fire({
-        title: 'Registro exitoso',
-        text: 'Te has registrado correctamente',
-        icon: 'success',
-        confirmButtonText: 'Aceptar'
-      });
+
     })
     .catch(err => console.error('Fetch error:', err));
     limpiarFormularioRegistrarse();
