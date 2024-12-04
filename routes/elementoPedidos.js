@@ -17,7 +17,7 @@ router.post("/registrarElementoPedido", (req,res)=>{
 
 router.get("/obtenerElemento", (req,res)=>{
   let id= req.query.id;
-  ElementoPedido.findById(id).then(data=> {res.send(data); console.log(data)}).catch(err=> res.send(err))
+  ElementoPedido.findById(id).populate('producto').then(data=> {res.send(data); console.log(data)}).catch(err=> res.send(err))
 })
 
 module.exports= router;

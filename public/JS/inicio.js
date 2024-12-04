@@ -5,6 +5,8 @@ let usuarioEnTurno= "";
 let productos=[];
 let carritoCompra=[]
 let colorSeleccionado;
+let montoFinal=0;
+let promises;
 //Acerca de
 function mostrarModuloAcercaDe() {
     let contenedorPrincipal = document.getElementById('panelPrincipal');
@@ -117,6 +119,10 @@ function mostrarCarroCompras() {
       .then(function (modulo) {
           contenedorPrincipal.innerHTML = modulo;
           inicializarCarroCompras();
+
+      });
+      Promise.all(promises).then(() => {
+        console.log("Monto Final: " + montoFinal);
       });
 }
 
@@ -137,7 +143,6 @@ function mostrarModuloLogin() {
 function mostrarModuloInformacionProducto(id) {
     let contenedorPrincipal = document.getElementById("panelPrincipal");
     let producto= obtenerInfoProducto(id)
-    console.log(producto.nombre);
 
 
     fetch("HTML/informacionProducto.html")
@@ -169,7 +174,6 @@ function inicializarFormularioLogin(){
   loginForm.addEventListener('submit', (event) =>{
 
         event.preventDefault();
-        console.log("entro")
         let usuarioLI= document.getElementById("correoLI");
         let contrasenaLI= document.getElementById("contrasenaLI");
         const data=JSON.stringify({
@@ -215,7 +219,6 @@ function inicializarFormularioRegistrarse(){
     let contrasenaR1= document.getElementById("contrasenaR1")
     let contrasenaR2= document.getElementById("contrasenaR2")
     let data={};
-    console.log(nombreR, apellidoR, emailR, contrasenaR1, contrasenaR2)
 
     if(contrasenaR1.value == contrasenaR2.value){
         data=JSON.stringify({
@@ -243,7 +246,6 @@ function inicializarFormularioRegistrarse(){
         return res.json();
     })
     .then(data => {
-      console.log(data)
       mostrarModuloLogin();
 
     })
@@ -288,7 +290,6 @@ function cargarProductos(){
         })
         .then(data => {
             productos = data;
-            console.log('Productos obtenidos:', productos);
             mostrarProductos();
         })
         .catch(error => {
@@ -300,8 +301,6 @@ function cargarProductos(){
 function mostrarProductos(){
   let areaAgregarProductos= document.getElementById("panelProductos")
   productos.forEach(producto => {
-        console.log("hola")
-        console.log(producto)
           areaAgregarProductos.innerHTML+=`
     <div class="card">
       <h2 class="card-title">${producto.nombre}</h2>
@@ -341,7 +340,7 @@ function mostrarProductos(){
                                 </tr>
                                 <tr>
                                     <td style="background-color: transparent;">Precio</td>
-                                    <td style="background-color: transparent;" id="precioElemento">${producto.precios[0]} </td>
+                                    <td style="background-color: transparent;" id="precioElemento">$ ${producto.precios[0]} </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -431,7 +430,6 @@ function inicializarBoxes(){
             box.classList.add('selected');
             colorSeleccionado=box.getAttribute('value');
 
-            console.log(colorSeleccionado);
 
         });
     });
@@ -441,7 +439,6 @@ function inicializarBoxes(){
 async function mostrarProducto(id) {
   try {
       const producto = await obtenerInfoProducto(id);
-      console.log('Producto obtenido:', producto);
 
       // Asegúrate de que los elementos del DOM existen
       let modeloOptions = document.getElementById('modeloOptions');
@@ -469,7 +466,6 @@ async function mostrarProducto(id) {
 
 
 async function obtenerInfoProducto(id) {
-  console.log("entro");
   try {
       const response = await fetch(`/productos/obtenerProducto?id=${id}`);
       if (!response.ok) {
@@ -524,55 +520,57 @@ async function agregarAlCarrito(id){
   .then(data => {
     elemento= data;
     carritoCompra.push(elemento)
-    console.log("Carrito de compra:", carritoCompra)
   })
   .catch(err => console.error('Fetch error:', err));
 
 
 
-  console.log(pedido)
 
 }
 
 async function inicializarCarroCompras(){
   const elementosCarritoC= document.getElementById("elementosCarritoC")
   const subtotal= document.getElementById("subtotal")
-  let montoFinal=0;
-    carritoCompra.forEach(elemento=>{
-      fetch(`/elementoPedidos/obtenerElemento?id=${encodeURIComponent(elemento.id)}`)
+  let productoCC;
+
+
+   promises= carritoCompra.map(elemento=>{
+      fetch(`/elementoPedidos/obtenerElemento?id=${encodeURIComponent(elemento._id)}`)
         .then(response => {
-          console.log("Response: "+response)
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.json();
         })
         .then(data => {
-            elemento = data;
-            console.log(elemento);
+            productoCC = data;
+            console.log(parseFloat(productoCC.montoTotal.$numberDecimal))
+            montoFinal += parseFloat(productoCC.montoTotal.$numberDecimal);
+
+            elementosCarritoC.innerHTML+= `
+      <div class="row w-100 m-0" style="font-size: 14px;">
+                    <div class="col-4 text-left">
+                        <p>${productoCC.producto.nombre}</p>
+                    </div>
+                    <div class="col-2 text-center" style="background-color: ${productoCC.color}">
+
+                    </div>
+                    <div class="col-3 text-center">
+                        <p>${productoCC.cantidad}</p>
+                    </div>
+                    <div class="col-3 text-center">
+                        <p>$ ${productoCC.montoTotal.$numberDecimal}</p>
+                    </div>
+                </div>
+      `
         })
         .catch(error => {
             console.error('Error al obtener elementoPedido:', error);
         });
-      elementosCarritoC.innerHTML+= `
-      <div class="row w-100 m-0" style="font-size: 14px;">
-                    <div class="col-4 text-left">
-                        <p>${elemento.producto.nombre}</p>
-                    </div>
-                    <div class="col-2 text-center" style="background-color: ${elemento.color}">
 
-                    </div>
-                    <div class="col-3 text-center">
-                        <p>${elemento.cantidad}</p>
-                    </div>
-                    <div class="col-3 text-center">
-                        <p>$ ${elemento.montoTotal}</p>
-                    </div>
-                </div>
-      `
-      montoFinal+=elemento.montoTotal;
     })
-    subtotal.innerText(montoFinal)
+
 }
+
 
 
