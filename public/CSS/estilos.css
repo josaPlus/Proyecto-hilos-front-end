@@ -403,7 +403,7 @@ li {
 
   /* estilos login html */
   .background {
-            background-image: url('FONDO.webp');
+            background-image: url('../IMG/FONDO.webp');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -414,82 +414,84 @@ li {
 
 
         .formulario {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 400px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            opacity: 0.9;
-        }
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 10px;
+          width: 100%;
+          max-width: 400px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          opacity: 0.9;
+      }
 
 
-        .formulario h2 {
-            font-size: 2rem;
-            color: #6d6a6a;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+      .formulario h2 {
+          font-size: 2rem;
+          color: #6d6a6a;
+          text-align: center;
+          margin-bottom: 20px;
+      }
 
-        form input {
-            margin-bottom: 15px;
-            padding: 10px 5px;
-            font-size: 14px;
-            border: none;
-            border-bottom: 2px solid #4d4b4b;
-            outline: none;
-            width: 100%;
-            background-color: transparent;
-        }
+      form input {
+          margin-bottom: 15px;
+          padding: 10px 5px;
+          font-size: 14px;
+          border: none;
+          border-bottom: 2px solid #4d4b4b;
+          outline: none;
+          width: 100%;
+          background-color: transparent;
+      }
 
-        /* Estilo cuando el campo tiene foco */
-        form input:focus {
-            border-bottom: 2px solid #fe7f2d
-            ;
-        }
+      /* Estilo cuando el campo tiene foco */
+      form input:focus {
+          border-bottom: 2px solid #fe7f2d
+          ;
+      }
 
-        form button {
-            width: 100%;
-            padding: 10px;
-            background-color: #fe7f2d
-            ;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+      /* Botón de registro */
+      form button {
+          width: 100%;
+          padding: 10px;
+          background-color: #fe7f2d
+          ;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+      }
 
+      /* Efecto hover en el botón */
+      form button:hover {
+          background-color: #f7bd96
+          ;
+      }
 
-        form button:hover {
-            background-color: #f7bd96
-            ;
-        }
+      /* Enlace para iniciar sesión */
+      .formulario a {
+          display: block;
+          text-align: left;
+          margin-top: 15px;
+          color: #4d4b4b;
+          text-decoration: none;
+      }
 
+      .formulario a:hover {
+          color: #f7bd96
 
-        .formulario a {
-            display: block;
-            text-align: left;
-            margin-top: 15px;
-            color: #4d4b4b;
-            text-decoration: none;
-        }
+          ;
+      }
 
-        .formulario a:hover {
-            color: #f7bd96
-
-            ;
-        }
-
-        @media screen and (max-width: 768px) {
-            .formulario {
-                padding: 15px;
-                width: 100%;
-            }
-            form button {
-                font-size: 12px;
-            }
-        }
+      /* Estilos responsivos */
+      @media screen and (max-width: 768px) {
+          .formulario {
+              padding: 15px;
+              width: 100%;
+          }
+          form button {
+              font-size: 12px;
+     }
+}
 /* estilo informacionProductos */
 * {
   margin: 0;
@@ -678,11 +680,16 @@ li {
 
 /*CSS Ubicación*/
 
-    .container {
+    .containerUbicacion {
       display: flex;
       flex-wrap: wrap;
-      padding: 20px;
-      margin: 20px;
+      /* padding: 20px; */
+      /* margin: 20px; */
+    }
+
+    .no-margin-top {
+      margin-top: 0 !important;
+      margin-bottom: 1.5vh !important;
     }
 
     .map-container {
