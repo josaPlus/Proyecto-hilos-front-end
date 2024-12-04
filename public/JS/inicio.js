@@ -7,6 +7,7 @@ let carritoCompra=[]
 let colorSeleccionado;
 let montoFinal=0;
 let promises;
+let cantidadElementos=0;
 //Acerca de
 function mostrarModuloAcercaDe() {
     let contenedorPrincipal = document.getElementById('panelPrincipal');
@@ -110,6 +111,7 @@ function mostrarModuloRestricciones() {
 }
 
 function mostrarCarroCompras() {
+  if(usuarioIngresado){
     let contenedorPrincipal = document.getElementById("panelProductos");
 
     fetch("HTML/carroCompras.html")
@@ -119,15 +121,19 @@ function mostrarCarroCompras() {
       .then(function (modulo) {
           contenedorPrincipal.innerHTML = modulo;
           inicializarCarroCompras();
-
+          console.log(montoFinal);
       });
-      Promise.all(promises).then(() => {
-        console.log("Monto Final: " + montoFinal);
-      });
+  }else{
+    mostrarModuloLogin();
+  }
 }
 
 function mostrarModuloLogin() {
     let contenedorPrincipal = document.getElementById("panelPrincipal");
+
+       let mensaje= "Bienvenido a login"
+    Swal.fire(mensaje)
+
 
     fetch("HTML/login.html")
       .then(function (data) {
@@ -487,6 +493,7 @@ function inicializarFormularioAgregar(id){
 
 
 async function agregarAlCarrito(id){
+  if(usuarioIngresado){
   let idProducto= id;
   let cantidad= document.getElementById("quantity").value
   let modelo= document.getElementById("modeloOptions").value
@@ -523,54 +530,71 @@ async function agregarAlCarrito(id){
   })
   .catch(err => console.error('Fetch error:', err));
 
-
+  }else{
+    mostrarModuloLogin()
+  }
 
 
 }
 
-async function inicializarCarroCompras(){
-  const elementosCarritoC= document.getElementById("elementosCarritoC")
-  const subtotal= document.getElementById("subtotal")
+async function inicializarCarroCompras() {
+  const elementosCarritoC = document.getElementById("elementosCarritoC");
+  const subtotal = document.getElementById("subtotal");
   let productoCC;
+  let promises = [];
 
+  for (let elemento of carritoCompra) {
+      promises.push(
+          (async () => {
+              try {
+                  let response = await fetch(`/elementoPedidos/obtenerElemento?id=${encodeURIComponent(elemento._id)}`);
+                  if (!response.ok) {
+                      throw new Error(`HTTP error! status: ${response.status}`);
+                  }
+                  let data = await response.json();
+                  productoCC = data;
+                  console.log(parseFloat(productoCC.montoTotal.$numberDecimal));
+                  montoFinal += parseFloat(productoCC.montoTotal.$numberDecimal);
+                  cantidadElementos+= productoCC.cantidad;
 
-   promises= carritoCompra.map(elemento=>{
-      fetch(`/elementoPedidos/obtenerElemento?id=${encodeURIComponent(elemento._id)}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            productoCC = data;
-            console.log(parseFloat(productoCC.montoTotal.$numberDecimal))
-            montoFinal += parseFloat(productoCC.montoTotal.$numberDecimal);
+                  elementosCarritoC.innerHTML += `
+                      <div class="row w-100 m-0" style="font-size: 14px;">
+                          <div class="col-4 text-left">
+                              <p>${productoCC.producto.nombre}</p>
+                          </div>
+                          <div class="col-2 text-center" style="background-color: ${productoCC.color}">
+                          </div>
+                          <div class="col-3 text-center">
+                              <p>${productoCC.cantidad}</p>
+                          </div>
+                          <div class="col-3 text-center">
+                              <p>$ ${productoCC.montoTotal.$numberDecimal}</p>
+                          </div>
+                      </div>
+                  `;
+              } catch (error) {
+                  console.error('Error al obtener elementoPedido:', error);
+              }
+          })()
+      );
+  }
 
-            elementosCarritoC.innerHTML+= `
-      <div class="row w-100 m-0" style="font-size: 14px;">
-                    <div class="col-4 text-left">
-                        <p>${productoCC.producto.nombre}</p>
-                    </div>
-                    <div class="col-2 text-center" style="background-color: ${productoCC.color}">
+  await Promise.all(promises);
+  console.log("Monto final después de calcular:", montoFinal);
 
-                    </div>
-                    <div class="col-3 text-center">
-                        <p>${productoCC.cantidad}</p>
-                    </div>
-                    <div class="col-3 text-center">
-                        <p>$ ${productoCC.montoTotal.$numberDecimal}</p>
-                    </div>
-                </div>
-      `
-        })
-        .catch(error => {
-            console.error('Error al obtener elementoPedido:', error);
-        });
-
-    })
+  actualizarSubtotal(montoFinal, cantidadElementos);
 
 }
 
+function actualizarSubtotal(nuevoSubtotal, cantidadElementos) {
+  const labelSubtotal = document.getElementById("subtotal");
+  const labelTotal= document.getElementById("total");
+  const labelArticulos= document.getElementById("cantidadElementos")
+  const labelTotalArticulos= document.getElementById("totalArticulos")
+  labelSubtotal.innerText = `$ ${nuevoSubtotal.toFixed(2)}`;
+  labelTotal.innerText = `$ ${nuevoSubtotal.toFixed(2)}`;
+  labelTotalArticulos.innerText = `$ ${nuevoSubtotal.toFixed(2)}`;
+  labelArticulos.innerText=` ${cantidadElementos}`;
+}
 
 

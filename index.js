@@ -4,6 +4,7 @@ const cors = require('cors');
 const path = require('path');
 const routerApi= require('./routes/rutas')
 const mongoose = require('mongoose');
+const Swal= require('sweetalert2')
 
 
 const app = express();
@@ -26,3 +27,4 @@ routerApi(app);
 app.listen(port, ()=>{
   console.log("Server working in: "+ port)
 })
+
