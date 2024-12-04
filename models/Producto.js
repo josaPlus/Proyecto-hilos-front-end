@@ -8,9 +8,6 @@ const ProductoSchema= new mongoose.Schema({
         type: String,
         require: true
     },
-    colores: {
-      type: Array
-    },
     imagen: {
       type: String
     },

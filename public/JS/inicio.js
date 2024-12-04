@@ -124,16 +124,13 @@ function mostrarCarroCompras() {
           console.log(montoFinal);
       });
   }else{
+    console.log("Necesita iniciar sesion para hacer esta accion")
     mostrarModuloLogin();
   }
 }
 
 function mostrarModuloLogin() {
     let contenedorPrincipal = document.getElementById("panelPrincipal");
-
-       let mensaje= "Bienvenido a login"
-    Swal.fire(mensaje)
-
 
     fetch("HTML/login.html")
       .then(function (data) {
@@ -202,6 +199,7 @@ function inicializarFormularioLogin(){
         .then(data => {
           if(data.ingreso== true){
             usuarioIngresado=true;
+            console.log("Usuario y contraseña correctos")
             mostrarModuloProductos();
             usuarioEnTurno= data.usuario;
           }else{
@@ -531,6 +529,7 @@ async function agregarAlCarrito(id){
   .catch(err => console.error('Fetch error:', err));
 
   }else{
+    console.log("Necesita iniciar sesion para hacer esta accion")
     mostrarModuloLogin()
   }
 
