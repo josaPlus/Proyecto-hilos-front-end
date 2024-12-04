@@ -198,9 +198,10 @@ li {
 
 /* estilo para contacto */
 .contact-box {
-    background-color: #d5bdaf;
-    padding: 20px;
-    border-radius: 10px;
+  background-color: #fcca46;
+  padding: 35px;
+  border-radius: 10px;
+  width:80%;
 }
 .icon-box {
     text-align: left;
@@ -211,19 +212,20 @@ li {
 }
 
 .icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    background-color: #d63384;
-    border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #619b8a;
+  border-radius: 50%;
+
 }
 
 
 .icon-box img.icon {
-    width: 2.3rem;
-    height: 2.3rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 .icon-box p {
@@ -680,21 +682,21 @@ li {
       display: flex;
       flex-wrap: wrap;
       padding: 20px;
-      margin: 20px; 
+      margin: 20px;
     }
 
     .map-container {
       flex: 1;
-      min-width: 300px; 
+      min-width: 300px;
       height: 400px;
-      background-color: #ddd; 
+      background-color: #ddd;
       border-radius: 8px;
       overflow: hidden;
     }
 
     .contact-info {
       flex: 1;
-      min-width: 300px; 
+      min-width: 300px;
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -702,7 +704,7 @@ li {
       margin-left: 20px;
       margin-top: 10px;
       margin-bottom: 10px;
-      background-color: transparent; 
+      background-color: transparent;
     }
 
     .contact-info h2 {
@@ -740,3 +742,36 @@ li {
         margin-top: 20px;
       }
     }
+
+    /* estilo nuevo contacto */
+    .blue-background {
+      background-color: #e7f1ee; /* Fondo azul */
+      padding: 20px; /* Espaciado interno */
+      position: relative; /* Necesario para centrar con flexbox dentro del contenedor */
+      display: flex; /* Activamos Flexbox */
+      align-items: center; /* Centrado vertical */
+      justify-content: center; /* Opcional: centrar horizontalmente */
+       height: 300px; /* Ocupa toda la altura de la ventana */
+      width: 100%; /* Asegura que ocupe todo el ancho */
+      margin-top: 20vh;
+      margin-bottom: 20vh;
+    }
+
+    .inputs {
+      background-color: transparent;;
+      border: none; /* Eliminar los bordes predeterminados */
+      border-bottom: 2px solid black; /* Agregar línea negra debajo */
+      border-radius: 0; /* Eliminar bordes redondeados */
+      outline: none; /* Quitar el resaltado azul al hacer clic */
+      width: 100%; /* Asegurar que ocupe el ancho completo */
+      padding: 5px 0; /* Espaciado interno */
+      font-size: 1.2rem; /* Tamaño de fuente */
+  }
+
+  .inputs:focus {
+      background-color: transparent; /* Fondo transparente al enfocar */
+      border: none;
+      outline: none;
+      box-shadow: none;
+      border-bottom: 2px solid #fd7e14; /* Mantener línea negra al enfocar */
+  }
