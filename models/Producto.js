@@ -17,8 +17,14 @@ const ProductoSchema= new mongoose.Schema({
     disponibilidad: {
       type: Number
     },
-    precio: {
-      type: mongoose.Types.Decimal128
+    precios: {
+      type: Array
+    },
+    modelos: {
+      type: Array
+    },
+    descripcion: {
+      type: String
     }
 });
 

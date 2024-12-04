@@ -612,3 +612,79 @@ form button:hover {
     border-radius: 10px;
 }
 }
+
+/*modal productos*/
+.modal-content {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  animation: changeColor 10s infinite;
+}
+
+@keyframes changeColor {
+  0% { background-color: #ff7e5f; }
+  25% { background-color: #feb47b; }
+  50% { background-color: #ff7e5f; }
+  75% { background-color: #feb47b; }
+  100% { background-color: #ff7e5f; }
+}
+
+.color-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.color-box {
+  width: 30px;
+  height: 30px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.color-box:hover {
+  transform: scale(1.1);
+}
+
+.color-box.selected {
+  border-color: black;
+}
+
+.selected-color {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal-content {
+              background-color: #e8e2d6;
+          }
+
+          .btn-modal{
+              float: right;
+              margin: 20px;
+              border-radius: 10px;
+              border:none; padding: 10px 20px;
+              font-size: 1rem;
+          }
+
+          .btn-agregarCarrito{
+              float: left;
+              margin: 20px;
+              border-radius: 10px;
+              border:none;
+              padding: 10px 15px;
+              font-size: 1rem;
+              display: block;
+              margin-top: 20px;
+              display: flex;
+              color: white;
+              background-color: #895b5b;
+          }
+
+          .input-numProductos{
+              border-radius: 10px;
+              padding: 10px 20px;
+              font-size: 1rem;
+              width: 90px;
+              display: block;
+          }

@@ -1,8 +1,8 @@
 const mongoose= require('mongoose');
-const ElementoPedido= require('./ElementoPedido');
-const PedidoSchema= new mongoose.Schema({
-    elementos:{
-        type: Array,
+const Producto= require('./Producto');
+const ElementoPedidoSchema= new mongoose.Schema({
+    producto:{
+        type: mongoose.Schema.Types.ObjectId, ref: 'Producto',
         require: true
     },
     cantidad: {
@@ -13,17 +13,14 @@ const PedidoSchema= new mongoose.Schema({
       type: mongoose.Types.Decimal128,
       require: true
     },
-    fechaRealizacion:{
-      type: Date,
+    modelo: {
+      type: String,
       require: true
     },
-    fechaEntrega:{
-      type: Date
-    },
-    estado: {
+    color: {
       type: String,
       require: true
     }
 });
 
-module.exports= mongoose.model('Pedido', PedidoSchema);
+module.exports= mongoose.model('ElementoPedido', ElementoPedidoSchema);
