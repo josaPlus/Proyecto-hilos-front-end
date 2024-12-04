@@ -54,11 +54,63 @@ function mostrarModuloContacto() {
 
     fetch('HTML/contacto.html')
         .then(function (data) {
+
             return data.text();
+
         })
         .then(function(modulo) {
             contenedorPrincipal.innerHTML = modulo;
+            inicializarFormularioContacto()
         });
+}
+function inicializarFormularioContacto(){
+    let formContacto= document.getElementById("contactoForm")
+    let botonSubmit= document.getElementById("submitContacto")
+    document.getElementById("submitContacto").addEventListener("click", async (event) => {
+      event.preventDefault();
+
+      // Recopila la información del formulario
+      let nombre = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let telefono = document.getElementById("phone").value;
+      let mensaje = document.getElementById("message").value;
+
+      // Crea un objeto con la información del formulario
+      let contacto = {
+          nombre: nombre,
+          email: email,
+          telefono: telefono,
+          mensaje: mensaje
+      };
+
+      try {
+          // Envía la información mediante una petición fetch con el método POST
+          let response = await fetch("/contactos/registrarContacto", {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json"
+              },
+              body: JSON.stringify(contacto)
+          });
+
+          if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          let data = await response.json();
+          console.log("Contacto agregado:", data);
+
+          // Muestra una alerta de éxito
+          Swal.fire("Contacto agregado exitosamente!");
+          mostrarModuloProductos();
+
+      } catch (error) {
+          console.error("Error al agregar contacto:", error);
+          Swal.fire("Error al agregar contacto. Inténtalo de nuevo.");
+      }
+  });
+
+
 }
 
 //Ubicacion
@@ -347,9 +399,7 @@ function mostrarProductos(){
                 </div>
                 <div class="modal-body">
                     <h1 class="modal-title p-1" id="modalProducto" style="text-align: center;">${producto.nombre}</h1>
-                    <div class="image  p-2">
-                        <img src="fondo-login-hilos.jpg"  class="img-fluid" alt="Hilos">
-                    </div>
+
 
 
                     <p class=" p-2">${producto.descripcion}</p>

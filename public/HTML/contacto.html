@@ -25,7 +25,7 @@
               <div class="col-md-6">
                   <div class="contact-box">
                       <h2 class="mb-3">Contáctanos</h2>
-                      <form>
+                      <form id="contactoForm">
                           <div class="mb-3">
                               <input type="text" class="form-control inputs-contacto" id="name" placeholder="Nombre">
                           </div>
@@ -39,12 +39,13 @@
                               <label for="message" class="form-label">Solicito cotización:</label>
                               <textarea class="form-control inputs-contacto" id="message" rows="2"></textarea>
                           </div>
-                      </form>
+
                       <div class="d-flex align-items-start justify-content-start">
-                          <button class="btn-enviar-contacto mt-3" style="background-color: #fff !important;">
+                          <button class="btn-enviar-contacto mt-3" id="submitContacto" style="background-color: #fff !important;">
                               <h5>Enviar</h5>
                           </button>
                       </div>
+                     </form>
                   </div>
               </div>
           </div>
