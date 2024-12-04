@@ -130,7 +130,7 @@ function mostrarModuloLogin() {
       .then(function (modulo) {
           contenedorPrincipal.innerHTML = modulo;
           inicializarFormularioLogin()
-          inicializarFormularioRegistrarse()
+
       });
 }
 
@@ -158,6 +158,8 @@ function mostrarModuloRegistro() {
       })
       .then(function (modulo) {
           contenedorPrincipal.innerHTML = modulo;
+          inicializarFormularioRegistrarse()
+
       });
 }
 
@@ -165,6 +167,8 @@ function inicializarFormularioLogin(){
   let loginForm= document.getElementById("loginForm");
 
   loginForm.addEventListener('submit', (event) =>{
+
+        event.preventDefault();
         console.log("entro")
         let usuarioLI= document.getElementById("correoLI");
         let contrasenaLI= document.getElementById("contrasenaLI");
@@ -186,12 +190,14 @@ function inicializarFormularioLogin(){
             return res.json();
         })
         .then(data => {
-          console.log(data);
-          usuarioIngresado=true;
-          mostrarModuloProductos();
-          usuarioEnTurno= data.usuario;
-          console.log(usuarioEnTurno)
-
+          if(data.ingreso== true){
+            usuarioIngresado=true;
+            mostrarModuloProductos();
+            usuarioEnTurno= data.usuario;
+          }else{
+            console.log("usuario y/o contraseña incorrectos")
+            mostrarModuloLogin()
+          }
         })
         .catch(err => console.error('Fetch error:', err));
         limpiarFormularioLogin()
@@ -202,6 +208,7 @@ function inicializarFormularioRegistrarse(){
   let registrarForm= document.getElementById("registrarForm");
 
   registrarForm.addEventListener("submit", (event)=>{
+    event.preventDefault()
     let nombreR= document.getElementById("nombreR")
     let apellidoR=  document.getElementById("apellidoR")
     let emailR= document.getElementById("emailR")
@@ -236,9 +243,8 @@ function inicializarFormularioRegistrarse(){
         return res.json();
     })
     .then(data => {
-      console.log(data);
-      usuarioIngresado=true;
-      mostrarModuloProductos();
+      console.log(data)
+      mostrarModuloLogin();
 
     })
     .catch(err => console.error('Fetch error:', err));
