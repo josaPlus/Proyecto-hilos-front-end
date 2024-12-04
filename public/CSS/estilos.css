@@ -39,7 +39,12 @@ body {
         .text-justify {
             text-align: justify;
         }
-    }
+      
+        p{
+          font-family: 'Barlow', sans-serif;
+
+        }
+    }  
 
     footer {
         background-color: #607947;
@@ -567,6 +572,8 @@ li {
 }
 
 
+
+
 /* estilos productos */
 
 #panelProductos {
@@ -643,15 +650,15 @@ li {
 
           .btn-agregarCarrito{
               float: left;
-              margin: 20px;
-              border-radius: 10px;
-              border:none;
-              padding: 10px 15px;
-              font-size: 1rem;
-              display: block;
-              margin-top: 20px;
-              display: flex;
-              color: white;
+              margin: 20px !important;
+              border-radius: 10px !important;
+              border:none !important;
+              padding: 10px 15px !important;
+              font-size: 1rem !important;
+              display: block !important;
+              margin-top: 20px !important;
+              display: flex !important;
+              color: white !important;
               background-color: #895b5b;
           }
 
