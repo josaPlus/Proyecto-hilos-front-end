@@ -1,39 +1,18 @@
-<div class="container px-4 w-100">
-  <div class="row gx-5">
-    <div class="col">
-      <div class="p-3 half-screen-rectangle">
-        <div class="formulario">
-          <form class="login-form" id="loginForm">
-            <h2 style="text-align: center;">Ingresar</h2>
-            <input type="email" id="correoLI" placeholder="Correo">
-            <input type="password" id="contrasenaLI" placeholder="Contraseña">
-            <button type="submit" class="btn btn-primary formulario" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-              Ingresar
-            </button>
-          </form>
+
+        <div class="background">
+            <div class="container">
+                <div class="row justify-content-start">
+                    <div class="col-12 col-md-6 col-lg-6"> <!-- Cambié a col-md-6 para ocupar la mitad -->
+                        <div class="formulario">
+                            <form class="login-form" id="loginForm">
+                                <h2 style="text-align: center;">Ingresar</h2>
+                                <input type="email" id="correoLI" placeholder="Correo">
+                                <input type="password" id="contrasenaLI" placeholder="Contraseña">
+                                <button type="submit">Iniciar sesión</button>
+                            </form>
+                            <a class="text-secundary" onclick="mostrarModuloRegistro();">Registrate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="p-3">
-        <div class="p-3 half-screen-rectangle2">
-          <div class="formulario">
-            <form class="login-form" id="registrarForm">
-              <h2 style="text-align: center;">Registrarse</h2>
-              <input type="text" id="nombreR" placeholder="Nombre">
-              <input type="text" id="apellidoR" placeholder="Apellido">
-              <input type="email" id="emailR" placeholder="Email">
-              <input type="password" id="contrasenaR1" placeholder="Contraseña">
-              <input type="password" id="contrasenaR2" placeholder="Contraseña">
-              <button type="submit" class="btn btn-primary formulario"
-                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                Registrarse
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-        
-</div>
