@@ -782,3 +782,90 @@ li {
       box-shadow: none;
       border-bottom: 2px solid #fd7e14; /* Mantener línea negra al enfocar */
   }
+
+  /* estilo de preguntas frecuentes */
+
+.preguntas-container {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+
+.preguntas-container h2 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Estilo para la lista ordenada */
+.preguntas-container ol {
+  padding-left: 20px;
+}
+
+.preguntas-container ol li {
+  margin-bottom: 20px;
+}
+
+.preguntas-container ol li strong {
+  font-size: 1.2rem;
+  color: #fe7f2d; /* Color destacado */
+}
+
+.preguntas-container ol p {
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #555; /* Texto gris suave */
+  line-height: 1.5; /* Espaciado entre líneas */
+}
+
+/* Estilo de la columna derecha */
+.faq-svg-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Ajuste completo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-svg-container svg {
+  fill: #fe7f2d; /* Color de ícono */
+  transition: transform 0.3s ease-in-out;
+}
+
+.faq-svg-container svg:hover {
+  transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .preguntas-container {
+    padding: 20px;
+  }
+
+  .preguntas-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .faq-svg-container {
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .preuntas-container ol li strong {
+    font-size: 1.1rem;
+  }
+
+  .preguntas-container ol p {
+    font-size: 0.9rem;
+  }
+}
